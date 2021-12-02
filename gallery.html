@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hami Nepali </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/Animate/animate.css">
+	<link rel="stylesheet" href="bootstrap/Animate/fixed.css">
+	<script src="bootstrap/Jquery/jquery-3.3.1.slim.min.js"></script> 
+	<script src="bootstrap/Jquery/popper.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
+	
+	<link href="style.css" rel="stylesheet">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          font-family: Arial;
+        }
+        
+        /* The grid: Four equal columns that floats next to each other */
+        .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+        }
+        
+        /* Style the images inside the grid */
+        .column img {
+          opacity: 0.8; 
+          cursor: pointer; 
+        }
+        
+        .column img:hover {
+          opacity: 1;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* The expanding image container */
+        .container {
+          position: relative;
+          display: none;
+        }
+        
+        /* Expanding image text */
+        #imgtext {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+          font-size: 20px;
+        }
+        
+        /* Closable button inside the expanded image */
+        .closebtn {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          color: white;
+          font-size: 35px;
+          cursor: pointer;
+        }
+        </style>
+</head>
+<body class="lead" data-spy="scroll" data-target="#mynavbar">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" > 
+		<a class="navbar-brand" href="#"><img src="img/logo.png" ></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar">
+<span class="navbar-toggler-icon" ></span>
+</button>
+<div class="collapse navbar-collapse" id="mynavbar">
+<ul class=" navbar-nav ml-auto">
+		
+    <li class="nav-item active">
+      <a class="nav-link"href="index.html">Home</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link"href="rooms.html">Donate</a>
+    </li>
+	<li class="nav-item ">
+		<a class="nav-link"href="">Gallary</a>
+	  </li>
+	  <li class="nav-item ">
+		<a class="nav-link"href="events.html">Events</a>  </li>
+	<li class="nav-item ">
+	  <a class="nav-link"href="">Notice</a>
+	  </li>
+	<li class="nav-item ">
+      <a class="nav-link"href="#contactdetails">Contact Us</a>
+    </li>
+    </ul>
+
+</div>
+</nav>
+
+
+<div style="text-align:center">
+  <h2>Tabbed Image Gallery</h2>
+  <p>Click on the images below:</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-annapurna-range.jpg" alt="Nature" style="width:100%" style="height: 100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-everest-climbers.jpg" alt="Snow" style="width:100%" style="height: 100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-pokhara.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-phewa-lake-pokhara.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-phewa-lake-pokhara.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-phewa-lake-pokhara.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-phewa-lake-pokhara.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-phewa-lake-pokhara.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://www.planetware.com/wpimages/2019/12/nepal-in-pictures-beautiful-places-to-photograph-phewa-lake-pokhara.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script>
+
+</body>
+</html>
