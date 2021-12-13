@@ -43,7 +43,7 @@
 }
 /*--- Landing --*/
 .home-inner{
-  background-image: url(img/Nepal-provinces-map.jpg);
+  background-image: url(img/Nepal-map.jpg);
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
